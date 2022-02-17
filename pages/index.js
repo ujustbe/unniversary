@@ -37,8 +37,23 @@ export default function Home() {
         <img src='/universary.svg' />
       </div>
 
-      <div>
-        Welcome to UjustBe Unniverse
+      <div className='welcommsg'>
+        <h1>Welcome to UjustBe Unniverse</h1>
+        <div className='agenda'>
+          <h3>Get ready to celebrate into</h3>
+          <ul>
+            <li>UJustBe : A world of Happy Faces</li>
+            <li>Meet the Winners : Performers of the Year</li>
+            <li>UJustBe Universe: A Space of Infinite Possibilities</li>
+            <li>Access the Core</li>
+            <li>Explore the Nucleus</li>
+            {/* <li>•	Link to have access for Relationship Bootcamp</li>
+            <li>•	Link to have access for Health Bootcamp</li>
+            <li>•	Link to have access for Wealth Bootcamp</li> */}
+          </ul>
+          
+        </div>
+        <button className='scanBtn'>Scan</button>
       </div>
 
 

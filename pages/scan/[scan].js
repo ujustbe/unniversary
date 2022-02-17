@@ -64,11 +64,12 @@ export default function Scan({ eventsName }) {
 
         console.log("All ready Login");
         if (result2.Type === "attend") {
-          console.log("allready Login attend" , );
+          console.log("allready Login attend",);
           setLoginsuccess(true);
-          router.push("/")
+          // router.push("/")
+          setTimeout(() => { router.push("/"); }, 2000);
 
-      }
+        }
 
         if (result2.Type === "Bootcamp3") {
           if (alldata.Bootcamp3 === "0") {
@@ -77,20 +78,20 @@ export default function Scan({ eventsName }) {
               phonenumber: alldata.phonenumber,
               profile: alldata.profile,
               Bootcamp3: "1"
-  
+
             }
-            axios.put('http://15.206.163.60/api/'+alldata.phonenumber, data).then(response => {
+            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(response.data));
               setAllData(alldata);
             });
           }
-          else{
+          else {
 
           }
         }
-        
+
         if (result2.Type === "Bootcamp2") {
           if (alldata.Bootcamp2 === "0") {
             const data = {
@@ -98,16 +99,16 @@ export default function Scan({ eventsName }) {
               phonenumber: alldata.phonenumber,
               profile: alldata.profile,
               Bootcamp2: "1"
-  
+
             }
-            axios.put('http://15.206.163.60/api/'+alldata.phonenumber, data).then(response => {
+            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(response.data));
               setAllData(alldata);
             });
           }
-          else{
+          else {
 
           }
         }
@@ -119,19 +120,19 @@ export default function Scan({ eventsName }) {
               phonenumber: alldata.phonenumber,
               profile: alldata.profile,
               Bootcamp1: "1"
-  
+
             }
-            axios.put('http://15.206.163.60/api/'+alldata.phonenumber, data).then(response => {
+            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(response.data));
               setAllData(alldata);
             });
           }
-          else{
+          else {
 
           }
-        } 
+        }
 
         if (result2.Type === "Bootcamp4") {
           if (alldata.Bootcamp4 === "0") {
@@ -140,19 +141,19 @@ export default function Scan({ eventsName }) {
               phonenumber: alldata.phonenumber,
               profile: alldata.profile,
               Bootcamp4: "1"
-  
+
             }
-            axios.put('http://15.206.163.60/api/'+alldata.phonenumber, data).then(response => {
+            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(response.data));
               setAllData(alldata);
             });
           }
-          else{
+          else {
 
           }
-        } 
+        }
         if (result2.Type === "tea") {
           if (alldata.tea === "0") {
             const data = {
@@ -160,19 +161,19 @@ export default function Scan({ eventsName }) {
               phonenumber: alldata.phonenumber,
               profile: alldata.profile,
               tea: "1"
-  
+
             }
-            axios.put('http://15.206.163.60/api/'+alldata.phonenumber, data).then(response => {
+            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(response.data));
               setAllData(alldata);
             });
           }
-          else{
+          else {
 
           }
-        } 
+        }
         if (result2.Type === "dinner") {
           if (alldata.tea === "0") {
             const data = {
@@ -180,22 +181,22 @@ export default function Scan({ eventsName }) {
               phonenumber: alldata.phonenumber,
               profile: alldata.profile,
               dinner: "1"
-  
+
             }
-            axios.put('http://15.206.163.60/api/'+alldata.phonenumber, data).then(response => {
+            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(response.data));
               setAllData(alldata);
             });
           }
-          else{
+          else {
 
           }
-        } 
-        
-        
-        
+        }
+
+
+
       } else {
         console.log("Not Login yet");
         console.log("all userData", alldata.attend);
@@ -204,16 +205,16 @@ export default function Scan({ eventsName }) {
 
         // console.log(result2.attend);
         if (result2.Type === "attend") {
-          if (alldata.attend === "0" ) {
+          if (alldata.attend === "0") {
             console.log("false");
             const data = {
               partnername: alldata.partnername,
               phonenumber: alldata.phonenumber,
               profile: alldata.profile,
               attend: "1"
-  
+
             }
-            axios.put('http://15.206.163.60/api/'+ alldata.phonenumber, data).then(response => {
+            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(response.data));
@@ -223,7 +224,9 @@ export default function Scan({ eventsName }) {
           else {
             console.log("Attendance true");
             setLoginsuccess(true)
-           
+            setTimeout(() => { router.push("/"); }, 2000);
+            
+
           }
         }
       }
@@ -244,12 +247,12 @@ export default function Scan({ eventsName }) {
   // }
 
   useEffect(() => {
-    axios.get('http://15.206.163.60/api/'+eventsName.scan)
-          .then(res => {
-            console.log(res.data);
-            const persons = res.data;
-            setAllData(persons);
-          })
+    axios.get('http://15.206.163.60/api/' + eventsName.scan)
+      .then(res => {
+        console.log(res.data);
+        const persons = res.data;
+        setAllData(persons);
+      })
   }, [])
 
 
@@ -263,14 +266,18 @@ export default function Scan({ eventsName }) {
         <img src='/universary.svg' />
       </div>
       <div className='QrcodeContainer'>
-        {loginsuccess ? <p>Login Successfull { }</p> : <>
+        {loginsuccess ? <div className='congrats'>
+          <h2>Congratulations <span>{alldata.partnername}</span></h2>
+          <p>You are entering in the <span>Space of Infinite Possibilities</span></p>
+
+        </div> : <>
           <QrReader
             delay={300}
             style={{ width: '100%' }}
             onError={handleErrorWebCam}
             onScan={handleScanWebCam}
           />
-          <h2>Scan here</h2>
+          <h2>Scan here<span>to take a Quantum leap</span></h2>
         </>
 
         }

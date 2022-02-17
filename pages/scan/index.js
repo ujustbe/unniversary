@@ -10,34 +10,23 @@ export default function Home() {
 
   useEffect(() => {
     const saved = localStorage.getItem("qrdata");
-    const data = {
-      partnername: "Shruti madhav",
-      phonenumber: "1234",
-      profile: "shruti.com",
-      attend: "1"
-
-    }
-    // axios.put('http://15.206.163.60/api/1234', data).then(response => {
-    //   console.log(response);
-    // });
-
-    // return () => {
-    //   second
+    // const data = {
+    //   partnername: "Shruti madhav",
+    //   phonenumber: "1234",
+    //   profile: "shruti.com",
+    //   attend: "1"
     // }
   }, [])
 
 
   return (
     <section className="wrapperScan">
-
-
-
       <div className='logo'>
         {/* <h1>Welcome to UjustBe Universe</h1> */}
         <img src='/universary.svg' />
       </div>
 
-      <div>
+      <div className='welcommsg'>
         Welcome to UjustBe Unniverse
       </div>
 

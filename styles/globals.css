@@ -32,6 +32,61 @@ a {
 
 }
 
+
+
+h2 span{font-family: 'Forum', cursive; display: block; color: #fe6f06;}
+.congrats h2 {font-family: 'Forum', cursive; display: block; color: #FFF; font-weight: normal;}
+.congrats h2 span {font-family: 'Forum', cursive; display: block; color: #fe6f06; font-size: 48px;}
+.congrats p{font-size: 20px; line-height: 24px;}
+.congrats p span{
+  display: block;
+  color: #fe6f06;
+  font-weight: bold;
+}
+.welcommsg{
+  font-family: 'Forum', cursive;
+  font-size: 30px;
+  color: #FFF;
+  text-align: center;
+}
+
+.agenda{
+  font-family: 'Mukta', sans-serif;
+  font-size: 18px;
+  color: #FFF;
+  text-align: left;
+  padding: 10px;
+  background-color: rgba(22, 39, 79, 0.8);
+  margin-top: 20px;
+}
+
+.agenda ul{
+  margin: 0px;
+  padding: 0px;
+}
+.agenda li{
+  padding-left:0px;
+  margin-left: 20px;
+}
+
+.scanBtn{
+  background-color: #fe6f06;
+  border: 0px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #FFF;
+  border-radius: 5px;
+  margin-top: 20px;
+
+}
+.agenda h1 {
+  font-weight: normal;
+  font-size: 36px;
+}
+.agenda h3{
+  margin: 0px;
+}
+
 .QrcodeContainer{
   width: 90%;
   text-align: center;
