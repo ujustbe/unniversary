@@ -51,14 +51,24 @@ export default function Scan({ eventsName }) {
   }
   const handleScanWebCam = (result) => {
     const saved = localStorage.getItem("qrdata");
+    console.log(result);
     if (result) {
       const text2 = result.replace(/ /g, '');
       // console.log(JSON.string(text2));
       const result2 = JSON.parse(text2);
       const result3 = JSON.stringify(result2)
       console.log("scann", result2.Type);
+
       // console.log(result);
       if (saved) {
+
+        console.log("All ready Login");
+        if (result2.Type === "attend") {
+          console.log("allready Login attend" , );
+          setLoginsuccess(true);
+          router.push("/")
+
+      }
 
         if (result2.Type === "Bootcamp3") {
           if (alldata.Bootcamp3 === "0") {
@@ -185,22 +195,16 @@ export default function Scan({ eventsName }) {
         } 
         
         
-        console.log("All ready Login");
-        console.log("all userData", alldata);
+        
       } else {
         console.log("Not Login yet");
         console.log("all userData", alldata.attend);
-        //localStorage.setItem('qrdata', result3);
-        // axios.get(`http://15.206.163.60/api/7208553985`)
-        //   .then(res => {
-        //     console.log(res);
-        //     const persons = res.data;
-        //     setAllData({ persons });
-        //   })
+        localStorage.setItem('qrdata', result3);
+
 
         // console.log(result2.attend);
         if (result2.Type === "attend") {
-          if (alldata.attend === "0") {
+          if (alldata.attend === "0" ) {
             console.log("false");
             const data = {
               partnername: alldata.partnername,
@@ -209,7 +213,7 @@ export default function Scan({ eventsName }) {
               attend: "1"
   
             }
-            axios.put('http://15.206.163.60/api/'+alldata.phonenumber, data).then(response => {
+            axios.put('http://15.206.163.60/api/'+ alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(response.data));
@@ -218,6 +222,7 @@ export default function Scan({ eventsName }) {
           }
           else {
             console.log("Attendance true");
+            setLoginsuccess(true)
            
           }
         }
@@ -239,22 +244,12 @@ export default function Scan({ eventsName }) {
   // }
 
   useEffect(() => {
-    localStorage.setItem('qrphone', eventsName.scan);
-    const data = {
-      partnername: "Shruti madhav",
-      phonenumber: "1234",
-      profile: "shruti.com",
-      attend: "1"
-
-    }
-    // axios.put('http://15.206.163.60/api/'+eventsName.scan, data).then(response => {
-    //   console.log(response);
-    // });
-
-
-    // return () => {
-    //   second
-    // }
+    axios.get('http://15.206.163.60/api/'+eventsName.scan)
+          .then(res => {
+            console.log(res.data);
+            const persons = res.data;
+            setAllData(persons);
+          })
   }, [])
 
 
