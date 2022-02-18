@@ -28,14 +28,14 @@ export default function Home() {
 
       <div className='wrongURL'>
         <h2 className=''>
-          Please Enter Valid URL
+          Please enter your valid URL
         </h2>
-        <p>Reach out core team for help</p>
+        <p>Reach out to core team for assistance</p>
         <div className='instruction'>
           <h4>
-            How find your personal URL
+            How to find your personal URL
           </h4>
-          <h5>https://unniversary-vert.vercel.app/<strong>your register mobile number</strong></h5>
+          <h5>https://unniversary-vert.vercel.app/scan/<strong>your register mobile number</strong></h5>
         </div>
       </div>
 
