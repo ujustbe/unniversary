@@ -26,14 +26,11 @@ export default function Home() {
         <img src='/universary.svg' />
       </div>
 
-      <div className='welcommsg'>
-        Welcome to UjustBe Unniverse
-      </div>
-
-      <div>
-        <Link  href="/">
-          <a className="scanButton">Scan</a>
-        </Link>
+      <div className='wrongURL'>
+        <h2 className=''>
+          Please Enter Valid URL
+        </h2>
+        <p>Reach out core team for help</p>
       </div>
 
       <div className='social-icon'>
