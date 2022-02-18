@@ -24,7 +24,7 @@ export default function Scan({ eventsName }) {
   const qrRef = useRef(null);
   const [id, setId] = useState();
   const [Attend, setAttend] = useState();
-  const [Bootcamp1, setBootcamp1] = useState();
+  const [Bootcamp1, setBootcamp1] = useState(false);
   const [Bootcamp2, setBootcamp2] = useState();
   const [Bootcamp3, setBootcamp3] = useState();
   const [Bootcamp4, setBootcamp4] = useState();
@@ -33,8 +33,8 @@ export default function Scan({ eventsName }) {
   const [Phonenumber, setPhonenumber] = useState();
   const [ProfileUrl, setProfileUrl] = useState();
   const [first, setfirst] = useState();
-
   const [loginsuccess, setLoginsuccess] = useState(false);
+  const [qrscan, setQrscan] = useState(false);
   const [alldata, setAllData] = useState({});
 
   const router = useRouter()
@@ -114,6 +114,8 @@ export default function Scan({ eventsName }) {
         }
 
         if (result2.Type === "Bootcamp1") {
+
+          console.log("in boot camp 1", result2.Type);
           if (alldata.Bootcamp1 === "0") {
             const data = {
               partnername: alldata.partnername,
@@ -127,10 +129,14 @@ export default function Scan({ eventsName }) {
               const alldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(response.data));
               setAllData(alldata);
+              setBootcamp1(true);
             });
           }
           else {
-
+            console.log("bootcamp1 true");
+            setBootcamp1(true);
+            setLoginsuccess(false)
+            setQrscan(true)
           }
         }
 
@@ -223,9 +229,10 @@ export default function Scan({ eventsName }) {
           }
           else {
             console.log("Attendance true");
+            setQrscan(true);
             setLoginsuccess(true)
             setTimeout(() => { router.push("/"); }, 2000);
-            
+
 
           }
         }
@@ -270,16 +277,30 @@ export default function Scan({ eventsName }) {
           <h2>Congratulations <span>{alldata.partnername}</span></h2>
           <p>You are entering in the <span>Space of Infinite Possibilities</span></p>
 
-        </div> : <>
-          <QrReader
-            delay={300}
-            style={{ width: '100%' }}
-            onError={handleErrorWebCam}
-            onScan={handleScanWebCam}
-          />
-          <h2>Scan here<span>to take a Quantum leap</span></h2>
-        </>
+        </div> : null
+        }
+        {
+          qrscan ? null : <>
+            <QrReader
+              delay={300}
+              style={{ width: '100%' }}
+              onError={handleErrorWebCam}
+              onScan={handleScanWebCam}
+            />
+            <h2>Scan here<span>to take a Quantum leap</span></h2>
+          </>
+        }
+        {Bootcamp1 ? <div className='congrats'>
+          <h2>Congratulations <span>{alldata.partnername}</span></h2>
+          <p>You are entering in the <span>Wealth Booth</span></p>
+          <ul>
+            <li><Link href="/">
+              <a>Go back to Home</a>
+            </Link></li>
+            <li><button function={scanagain} className='scanBtn'>Scan again</button></li>
+          </ul>
 
+        </div> : null
         }
 
       </div>

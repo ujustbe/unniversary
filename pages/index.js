@@ -10,13 +10,13 @@ export default function Home() {
 
   useEffect(() => {
     const saved = localStorage.getItem("qrdata");
-    const data = {
-      partnername: "Shruti madhav",
-      phonenumber: "1234",
-      profile: "shruti.com",
-      attend: "1"
+    // const data = {
+    //   partnername: "Shruti madhav",
+    //   phonenumber: "1234",
+    //   profile: "shruti.com",
+    //   attend: "1"
 
-    }
+    // }
     // axios.put('http://15.206.163.60/api/1234', data).then(response => {
     //   console.log(response);
     // });
