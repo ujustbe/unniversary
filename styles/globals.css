@@ -50,7 +50,8 @@ h2 span{font-family: 'Forum', cursive; display: block; color: #fe6f06;}
   width: 100%;
   padding: 0px;
   display: flex;
-  justify-content: center;
+  justify-content: center
+  ;
   align-items: center;
   column-gap: 15px;
 
@@ -141,9 +142,38 @@ h2 span{font-family: 'Forum', cursive; display: block; color: #fe6f06;}
   color: #fe6f06;
 }
 
+.wrongURL{
+  text-align: center;
+  color: #FFF;
+}
+
 .wrongURL p{
   color:#FFF;
   text-align: center;
+}
+
+.instruction{
+  padding: 20px;
+  border-radius: 5px;
+  background-color: #16274f;
+}
+
+.instruction h4{
+  margin: 0px;
+  padding: 0px;
+  font-size: 20px;
+  font-family: 'Mukta', sans-serif;
+  margin-bottom: 20px;
+}
+.instruction h5{
+  margin: 0px;
+  padding: 0px;
+  color: #93c4d3;
+  font-size: 18px;
+  font-weight: 400;
+}
+.instruction h5 strong{
+  font-weight: 600;
 }
 
 .msg2{

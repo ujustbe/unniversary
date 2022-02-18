@@ -31,6 +31,12 @@ export default function Home() {
           Please Enter Valid URL
         </h2>
         <p>Reach out core team for help</p>
+        <div className='instruction'>
+          <h4>
+            How find your personal URL
+          </h4>
+          <h5>https://unniversary-vert.vercel.app/<strong>your register mobile number</strong></h5>
+        </div>
       </div>
 
       <div className='social-icon'>

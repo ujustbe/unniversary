@@ -231,7 +231,10 @@ export default function Scan({ eventsName }) {
         console.log(res.data);
         const persons = res.data;
         setAllData(persons);
-      })
+      }).catch(err => {
+        console.log(err);
+        router.push("/");
+      });
   }, [])
 
 
