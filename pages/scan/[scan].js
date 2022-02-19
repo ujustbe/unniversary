@@ -82,7 +82,7 @@ export default function Scan({ eventsName }) {
               Bootcamp3: "1"
 
             }
-            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
+            axios.put('http://universaryapi.ujustbe.com/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
               // localStorage.setItem('qrdata', JSON.stringify(response.data));
@@ -105,7 +105,7 @@ export default function Scan({ eventsName }) {
               Bootcamp1: "1"
 
             }
-            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
+            axios.put('http://universaryapi.ujustbe.com/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
              // localStorage.setItem('qrdata', JSON.stringify(response.data));
@@ -131,7 +131,7 @@ export default function Scan({ eventsName }) {
               Bootcamp2: "1"
 
             }
-            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
+            axios.put('http://universaryapi.ujustbe.com/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
              // localStorage.setItem('qrdata', JSON.stringify(response.data));
@@ -157,7 +157,7 @@ export default function Scan({ eventsName }) {
               Bootcamp3: "1"
 
             }
-            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
+            axios.put('http://universaryapi.ujustbe.com/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const alldata = response.data;
              // localStorage.setItem('qrdata', JSON.stringify(response.data));
@@ -192,7 +192,7 @@ export default function Scan({ eventsName }) {
               attend: "1"
 
             }
-            axios.put('http://15.206.163.60/api/' + alldata.phonenumber, data).then(response => {
+            axios.put('http://universaryapi.ujustbe.com/api/' + alldata.phonenumber, data).then(response => {
               console.log(response);
               const resultalldata = response.data;
               localStorage.setItem('qrdata', JSON.stringify(resultalldata));
@@ -226,7 +226,7 @@ export default function Scan({ eventsName }) {
   // }
 
   useEffect(() => {
-    axios.get('http://15.206.163.60/api/' + eventsName.scan)
+    axios.get('http://universaryapi.ujustbe.com/api/' + eventsName.scan)
       .then(res => {
         console.log(res.data);
         const persons = res.data;
